@@ -1,4 +1,4 @@
-# Steward - Property Management Platform
+# RentEasy - Property Management Platform
 
 A modern, fast, and scalable property management application built with React, Vite, and Tailwind CSS.
 
