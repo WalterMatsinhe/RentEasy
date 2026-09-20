@@ -1,4 +1,3 @@
-import React from 'react'
 import { useAllocations } from '@/context/AllocationContext'
 import { useRooms } from '@/context/RoomContext'
 import { useApplications } from '@/context/ApplicationContext'

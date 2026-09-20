@@ -1,4 +1,3 @@
-import React from 'react'
 import { useRooms } from '@/context/RoomContext'
 import { Link } from 'react-router-dom'
 
@@ -241,13 +240,14 @@ export default function Dashboard() {
             <tbody className="divide-y divide-gray-50">
               {rooms.slice(0, 5).map((room) => {
                 const pct = room.capacity === 0 ? 0 : Math.round((room.occupiedBeds / room.capacity) * 100)
+                const statusLabel = room.availabilityStatus.replace('_', ' ')
                 const statusColor =
-                  room.status === 'Available' ? 'bg-emerald-100 text-emerald-700' :
-                  room.status === 'Full' ? 'bg-red-100 text-red-600' :
+                  room.availabilityStatus === 'available' ? 'bg-emerald-100 text-emerald-700' :
+                  room.availabilityStatus === 'full' ? 'bg-red-100 text-red-600' :
                   'bg-amber-100 text-amber-700'
                 return (
                   <tr key={room.id} className="hover:bg-gray-50/50 transition-colors">
-                    <td className="py-3 font-semibold text-gray-800">{room.name}</td>
+                    <td className="py-3 font-semibold text-gray-800">{room.title}</td>
                     <td className="py-3 text-gray-500">{room.type}</td>
                     <td className="py-3 text-gray-500">{room.capacity} beds</td>
                     <td className="py-3 w-36">
@@ -263,7 +263,7 @@ export default function Dashboard() {
                     </td>
                     <td className="py-3">
                       <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${statusColor}`}>
-                        {room.status}
+                        {statusLabel}
                       </span>
                     </td>
                   </tr>

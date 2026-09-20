@@ -1,6 +1,5 @@
 import { useAuth } from '@/context/AuthContext'
 import { Student } from '@/types'
-import { Link } from 'react-router-dom'
 import studentImg from '@/assets/african-student.jpg'
 
 export default function StudentProfile() {

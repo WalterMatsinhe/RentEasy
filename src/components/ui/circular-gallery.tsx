@@ -26,11 +26,9 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
     const [currentIndex, setCurrentIndex] = useState(0);
     const [dragDelta, setDragDelta] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
-    const [isAnimating, setIsAnimating] = useState(false);
     const [userInteracted, setUserInteracted] = useState(false);
-    const interactionTimerRef = useRef<NodeJS.Timeout | null>(null);
+    const interactionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const dragStartXRef = useRef(0);
-    const containerRef = useRef<HTMLDivElement | null>(null);
     const n = items.length;
     const anglePerItem = 360 / n;
 
@@ -41,8 +39,6 @@ const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryProps>(
     // Navigate to index with bounds wrapping
     const goTo = useCallback((index: number, fromUser = false) => {
       setCurrentIndex(((index % n) + n) % n);
-      setIsAnimating(true);
-      setTimeout(() => setIsAnimating(false), 400);
       if (fromUser) {
         setUserInteracted(true);
         if (interactionTimerRef.current) clearTimeout(interactionTimerRef.current);

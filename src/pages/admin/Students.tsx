@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const mockStudents = [
   { id: '1', name: 'Kwame Osei', studentId: '2026101', email: 'kwame.osei@example.com', phone: '+254 712 345678', program: 'Computer Science', status: 'Active', room: 'Room 101' },

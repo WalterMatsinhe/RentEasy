@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useApplications } from '@/context/ApplicationContext'
 import { useRooms } from '@/context/RoomContext'
 import { useAllocations } from '@/context/AllocationContext'
-import { Application, Room } from '@/types'
+import { Application } from '@/types'
 
 export default function Applications() {
   const { applications, updateApplicationStatus } = useApplications()

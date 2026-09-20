@@ -1,4 +1,3 @@
-import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, AreaChart, Area } from 'recharts'
 
 export default function Reports() {

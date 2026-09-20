@@ -60,7 +60,7 @@ export default function StudentNotifications() {
         ) : (
           <div className="divide-y divide-gray-50">
             {notifications.map((notification, idx) => {
-              const iconPath = typeIcons[notification.type] || typeIcons.general
+              const iconPath = typeIcons.general
               return (
                 <div
                   key={notification.id}
