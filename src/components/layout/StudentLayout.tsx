@@ -68,7 +68,23 @@ export default function StudentLayout() {
       </aside>
 
       {/* Main Content Area */}
-      <main className="flex-1 overflow-y-auto">
+      <main className="portal-main flex-1 overflow-y-auto">
+        <div className="portal-mobile-nav md:hidden sticky top-0 z-30 bg-primary text-white px-3 py-3 shadow-md">
+          <div className="flex items-center gap-2 mb-3">
+            <img src={logo} alt="Logo" className="h-7 w-auto object-contain" />
+            <span className="font-serif font-bold text-accent">Student Portal</span>
+          </div>
+          <nav className="flex gap-2 overflow-x-auto pb-1" aria-label="Student navigation">
+            {navItems.map((item) => (
+              <NavLink key={item.name} to={item.path} className={({ isActive }) => `shrink-0 px-3 py-2 rounded-lg text-xs font-medium ${isActive ? 'bg-accent text-primary' : 'bg-white/10 text-white/80'}`}>
+                {item.name}
+              </NavLink>
+            ))}
+            <button onClick={handleLogout} className="shrink-0 rounded-lg bg-white/10 px-3 py-2 text-xs font-medium text-white/80 hover:bg-red-500/20 hover:text-white">
+              Logout
+            </button>
+          </nav>
+        </div>
         <Outlet />
       </main>
     </div>

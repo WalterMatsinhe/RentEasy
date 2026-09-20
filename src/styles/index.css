@@ -5,12 +5,72 @@
 @tailwind utilities;
 
 @layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     @apply font-sans text-gray-900;
+    min-width: 320px;
+    overflow-x: hidden;
+  }
+
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif font-semibold;
+  }
+}
+
+@layer utilities {
+  .portal-main {
+    min-width: 0;
+  }
+
+  @media (max-width: 767px) {
+    .portal-main > .min-h-screen,
+    .portal-main > .p-8 {
+      padding: 1rem;
+    }
+
+    .portal-main table {
+      min-width: 640px;
+    }
+
+    .portal-main .overflow-x-auto {
+      max-width: 100%;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .portal-main .grid-cols-3 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .portal-main h1 {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+
+    .portal-main .portal-mobile-nav {
+      padding: 0.75rem;
+    }
+  }
+
+  @media (min-width: 480px) and (max-width: 767px) {
+    .portal-main .grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 }
 

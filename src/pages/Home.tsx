@@ -18,17 +18,17 @@ export default function Home() {
     <div className="pb-16 bg-gray-50/50">
       {/* Hero Section */}
       <section
-        className="relative h-[500px] bg-cover bg-center"
+        className="relative h-[560px] bg-cover bg-center sm:h-[500px]"
         style={{ backgroundImage: `url(${RentEasyHero})` }}
       >
         <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
 
-        <div className="relative z-10 max-w-7xl mx-auto h-full flex flex-col justify-center px-4 sm:px-6">
-          <h1 className="font-serif text-5xl md:text-6xl font-bold text-white mb-6 max-w-3xl leading-tight">
+        <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-4 pb-8 pt-24 sm:px-6 sm:py-0">
+          <h1 className="mb-4 max-w-3xl font-serif text-4xl font-bold leading-tight text-white sm:mb-6 sm:text-5xl md:text-6xl">
             Find Your Perfect Hostel Room in Adana
           </h1>
 
-          <p className="text-xl text-white/90 max-w-2xl mb-10 leading-relaxed">
+          <p className="mb-8 max-w-2xl text-base leading-relaxed text-white/90 sm:mb-10 sm:text-xl">
             Connect with verified student hostels and manage applications effortlessly in one place.
           </p>
 
@@ -52,19 +52,19 @@ export default function Home() {
 
       {/* Stats Section */}
       <section className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 -mt-12 sm:-mt-16 mb-20">
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="rounded-2xl border border-gray-100 bg-white p-5 shadow-xl sm:p-8">
+          <div className="grid grid-cols-2 gap-5 sm:gap-8 md:grid-cols-4">
             {[
               { value: '500+', label: 'Verified Rooms' },
               { value: '1.2K+', label: 'Happy Students' },
               { value: '98%', label: 'Successful Allocations' },
               { value: '4.9★', label: 'Average Rating' },
             ].map((stat) => (
-              <div key={stat.label} className="text-center group">
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-3 group-hover:scale-105 transition-transform duration-300">
+              <div key={stat.label} className="group text-center">
+                <div className="mb-2 text-3xl font-bold text-primary transition-transform duration-300 group-hover:scale-105 sm:mb-3 sm:text-4xl md:text-5xl">
                   {stat.value}
                 </div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
+                <div className="text-sm font-medium text-gray-600 sm:text-base">{stat.label}</div>
               </div>
             ))}
           </div>
