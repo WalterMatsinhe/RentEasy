@@ -5,7 +5,7 @@ export default function Button({
   className = '',
   ...props
 }: React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: 'primary' | 'secondary' | 'ghost'
+  variant?: 'primary' | 'secondary' | 'accent' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
 }) {
   const baseStyles = 'font-semibold rounded-lg transition-all duration-200 font-sans'
@@ -13,6 +13,7 @@ export default function Button({
   const variants = {
     primary: 'bg-primary text-white hover:bg-opacity-90',
     secondary: 'bg-secondary text-white hover:bg-opacity-90',
+    accent: 'bg-accent text-primary hover:bg-opacity-90',
     ghost: 'bg-transparent text-gray-900 hover:bg-gray-100',
   }
   

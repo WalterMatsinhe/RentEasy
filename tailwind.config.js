@@ -7,11 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#C4956A',
-        secondary: '#3A3530',
-        accent: '#8B7355',
-        light: '#F4F1EB',
-        dark: '#2C2C2C',
+        primary: '#264559',
+        secondary: '#264559',
+        accent: '#E5E642',
+        light: '#F4F7F8',
+        dark: '#264559',
       },
       fontFamily: {
         serif: ['Georgia', 'serif'],
